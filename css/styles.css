@@ -30,8 +30,16 @@ body {
   transform: translate(200px, 200px); }
 
 .button {
+  --text-color: #ddd;
+  color: var(--text-color);
+  border: solid #444 4px;
+  text-align: center;
   border-radius: 50%;
   width: 96px;
-  height: 96px; }
+  height: 96px;
+  line-height: 73.6px; }
+
+.button:hover {
+  border-color: #ccc; }
 
 /*# sourceMappingURL=styles.css.map */
