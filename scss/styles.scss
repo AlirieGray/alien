@@ -1,0 +1,49 @@
+/* SCSS */
+
+$color-1: #ddd; // gray
+$color-2: #444;
+$sprite-size: 64px;
+$container-size: 500px;
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: $color-1;
+  color: $color-2;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  width: $container-size;
+  height: $container-size;
+  margin: auto;
+  background-color: #aaa;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#sprite {
+  position: absolute;
+  width: $sprite-size;
+  height: $sprite-size;
+  background-image: url(../images/alien-5.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(200px, 200px);
+}
+
+.button {
+  border-radius: 50%;
+  width: $sprite-size * 1.5;
+  height: $sprite-size * 1.5;
+}
