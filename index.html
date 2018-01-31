@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title> Alien </title> 
+  <title> Alien </title>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
@@ -9,27 +9,77 @@
 
 <body>
 
-  <div class="container">
-    <div id="sprite"></div>
+  <div class="container" id="container">
+    <div id="alien"></div>
     <div class="coords">
     </div>
     <div class="buttons">
-      <div class="button">
+      <div class="button" id="left">
         Left
       </div>
-      <div class="button">
+      <div class="button" id="up">
         Up
       </div>
-      <div class="button">
+      <div class="button" id="right">
         Right
       </div>
-      <div class="button">
+      <div class="button" id="down">
         Down
       </div>
     </div>
   </div>
 
+  <script>
+    const left = document.getElementById('left');
+    const up = document.getElementById('up');
+    const right = document.getElementById('right');
+    const down = document.getElementById('down');
+    const alien = document.getElementById('alien');
 
+    let x = 200;
+    let y = 200;
+
+    function moveAlien(x, y) {
+      if (x >= 0 && x <= 405) {
+        alien.style.setProperty('--x', x);
+      }
+      if (y >= 0 && y <= document.getElementById('container').clientHeight - 90) {
+        alien.style.setProperty('--y', y);
+      }
+    }
+
+    left.onclick = function(e) {
+      console.log('left');
+      if (x >= 5) {
+        x -= 10;
+        alien.style.setProperty('--x', x);
+      }
+    }
+
+    right.onclick = function(e) {
+      if (x <= 405) {
+        x += 10;
+        alien.style.setProperty('--x', x);
+      }
+    }
+
+    up.onclick = function(e) {
+      console.log('up')
+      if (y >= 0) {
+        y -= 10;
+        alien.style.setProperty('--y', y);
+      }
+
+    }
+
+    down.onclick = function(e) {
+      if (y <= document.getElementById('container').clientHeight - 90)) {
+        y += 10;
+        alien.style.setProperty('--y', y);
+      }
+    }
+
+  </script>
 
 </body>
 

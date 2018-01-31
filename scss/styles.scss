@@ -6,6 +6,10 @@ $color-3: #ccc;
 $sprite-size: 64px;
 $container-size: 500px;
 
+:root {
+
+}
+
 body, html {
   height: 100%;
   margin: 0;
@@ -16,6 +20,7 @@ body {
   color: $color-2;
   display: flex;
   justify-content: center;
+  font-family: Helvetica, sans-serif;
 }
 
 .container {
@@ -33,29 +38,36 @@ body {
   }
 }
 
-#sprite {
+#alien {
+
+  --x: 200;
+  --y: 200;
+
   position: absolute;
   width: $sprite-size;
   height: $sprite-size;
   background-image: url(../images/alien-5.png);
   background-repeat: no-repeat;
   background-position: center;
-  transform: translate(200px, 200px);
+  transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px));
+  transition: 400ms;
 }
 
 .button {
 
   --text-color: #ddd;
+  --size: 64px;
   color: var(--text-color);
   border: solid #444 4px;
 
+  font-size: 1.2em;
   text-align: center;
   border-radius: 50%;
-  width: $sprite-size * 1.5;
-  height: $sprite-size * 1.5;
-  line-height: $sprite-size * 1.15;
+  width: var(--size);
+  height: var(--size);
+  line-height: var(--size);
 }
 
 .button:hover {
-  border-color: $color-3;
+  background-color: #444;
 }
