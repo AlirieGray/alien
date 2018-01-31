@@ -39,15 +39,6 @@
     let x = 200;
     let y = 200;
 
-    function moveAlien(x, y) {
-      if (x >= 0 && x <= 405) {
-        alien.style.setProperty('--x', x);
-      }
-      if (y >= 0 && y <= document.getElementById('container').clientHeight - 90) {
-        alien.style.setProperty('--y', y);
-      }
-    }
-
     left.onclick = function(e) {
       console.log('left');
       if (x >= 5) {
@@ -73,7 +64,7 @@
     }
 
     down.onclick = function(e) {
-      if (y <= document.getElementById('container').clientHeight - 90)) {
+      if (y <= document.getElementById('container').clientHeight - 90) {
         y += 10;
         alien.style.setProperty('--y', y);
       }
